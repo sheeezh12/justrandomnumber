@@ -1,17 +1,27 @@
 import random
-import requests
-
-i = 1
 
 
 
-while i < 6:
-    val = int(input("inputkan angka : "))
-    if val == 5 :
-        print("benaar")
+print("Selamat datang di Tebak Angka")
+
+
+while True:
+    i=0
+    target = random.randint(1,10)
+    chance = int(input("Masukkan jumlah kesempatan yang anda inginkan : "))
+    while i < chance:
+        val = int(input("inputkan angka : "))
+        if val == target :
+            print("Selamat Anda benar")
+            break
+        else:
+            print("Coba Lagi")
+            i +=1
+            if i == chance:
+                print("Kesempatan habis")
+                print("Angka yang benar adalah : ", target)
+                
+    choice = input("Tekan Y untuk bermain lagi, tekan tombol lainnya jika ingin mengakhiri : ").lower()
+    if choice != 'y':
+        print("Goodbye!")
         break
-    else:
-        print("try")
-        i +=1
-        if i == 6:
-            print("kesempatan habis")
