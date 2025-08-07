@@ -7,10 +7,12 @@ print("Selamat datang di Tebak Angka")
 
 while True:
     i=0
-    target = random.randint(1,10)
     chance = int(input("Masukkan jumlah kesempatan yang anda inginkan : "))
+    lower_limit = int(input("Masukkan limit bawah : "))
+    upper_limit = int(input("Masukkan limit atas : "))
+    target = random.randint(lower_limit, upper_limit)
     while i < chance:
-        val = int(input("inputkan angka : "))
+        val = int(input("Inputkan angka : "))
         if val == target :
             print("Selamat Anda benar")
             break
